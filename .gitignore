@@ -1,0 +1,9 @@
+Cargo.lock
+*.env
+target
+contracts/out
+contracts/cache
+contracts/broadcast
+contracts/example/cache
+contracts/example/out
+crates/bindings/src

@@ -1,0 +1,7 @@
+[workspace]
+resolver = "2"
+members = ["qrng-controller", "crates/bindings"]
+
+[workspace.dependencies]
+foundry-contracts = { path = "crates/bindings" }
+

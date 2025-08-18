@@ -1,0 +1,38 @@
+[package]
+name = "qrng-controller"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+foundry-contracts.workspace = true
+
+log = "0.4"
+env_logger = "0.11"
+dotenv = "0.15.0"
+color-eyre = "0.6"
+
+# backend = { git = "ssh://git@github.com/iQrypto/miseno-cli.git", default-features = false, optional = true }
+
+tokio = { version = "1.41.1", features = ["macros", "rt-multi-thread"] }
+futures-util = "0.3"
+alloy = { version = "1.0.12", features = [
+  "providers",
+  "transports",
+  "rpc",
+  "rpc-types",
+  "reqwest",
+  "provider-ws"
+] }
+
+serde_json = "1"
+
+rand = { version = "0.8", optional = true}
+libecvrf = { version = "1.1.2",optional = true }
+ethsign = { version = "0.9.0",optional = true }
+
+
+[features]
+# default =["dep:backend"] 
+testing= ["dep:rand","dep:libecvrf","dep:ethsign"]
